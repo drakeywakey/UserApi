@@ -1,0 +1,14 @@
+/Users/drakebennion/Projects/UserApi/UserApi/bin/Debug/netcoreapp2.1/UserApi.deps.json
+/Users/drakebennion/Projects/UserApi/UserApi/bin/Debug/netcoreapp2.1/UserApi.runtimeconfig.json
+/Users/drakebennion/Projects/UserApi/UserApi/bin/Debug/netcoreapp2.1/UserApi.runtimeconfig.dev.json
+/Users/drakebennion/Projects/UserApi/UserApi/bin/Debug/netcoreapp2.1/UserApi.dll
+/Users/drakebennion/Projects/UserApi/UserApi/bin/Debug/netcoreapp2.1/UserApi.pdb
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.csprojAssemblyReference.cache
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.csproj.CoreCompileInputs.cache
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.RazorAssemblyInfo.cache
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.RazorAssemblyInfo.cs
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.AssemblyInfoInputs.cache
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.AssemblyInfo.cs
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.RazorTargetAssemblyInfo.cache
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.dll
+/Users/drakebennion/Projects/UserApi/UserApi/obj/Debug/netcoreapp2.1/UserApi.pdb
