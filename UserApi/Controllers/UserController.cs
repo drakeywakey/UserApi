@@ -21,7 +21,7 @@ namespace UserApi.Controllers
         [HttpGet]
         public ActionResult<List<User>> GetAll()
         {
-            return _userService.GetAllUsers().ToList();
+            return Ok(_userService.GetAllUsers().ToList());
         }
     }
 }
