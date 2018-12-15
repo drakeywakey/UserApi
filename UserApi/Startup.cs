@@ -33,6 +33,7 @@ namespace UserApi
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +50,12 @@ namespace UserApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("index.html");
+            app.UseDefaultFiles(options);
+            app.UseStaticFiles();
         }
     }
 }
