@@ -7,5 +7,6 @@ namespace UserApi.Interfaces
     public interface IUserService
     {
         IEnumerable<User> GetAllUsers();
+        IEnumerable<User> SearchUsers(string search);
     }
 }

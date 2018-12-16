@@ -18,5 +18,10 @@ namespace UserApi.Services
         {
             return _repository.GetAll();
         }
+
+        public IEnumerable<User> SearchUsers(string search)
+        {
+            return _repository.GetAll(search);
+        }
     }
 }

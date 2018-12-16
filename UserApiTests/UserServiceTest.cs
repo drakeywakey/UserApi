@@ -78,6 +78,9 @@ namespace UserApiTests
             };
 
             _repository.Setup(repo => repo.GetAll()).Returns(list);
+            _repository.Setup(repo => repo.GetAll("D")).Returns(
+                list.Where(user => user.FirstName.Equals("Doug")));
+
             _service = new UserService(_repository.Object);
         }
 
@@ -85,6 +88,13 @@ namespace UserApiTests
         public void GetAll_ReturnsAllUsers()
         {
             Assert.Equal(5, _service.GetAllUsers().Count());
+        }
+
+        [Fact]
+        public void Search_FindsMatchingUsers()
+        {
+            var result = _service.SearchUsers("D");
+            Assert.True(result.Any(user => user.FirstName.Equals("Doug")));
         }
     }
 }

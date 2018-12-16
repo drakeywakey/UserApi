@@ -24,5 +24,10 @@ namespace UserApi.Infrastructure
         {
             return _context.Users;
         }
+
+        public IEnumerable<User> GetAll(string search)
+        {
+            return _context.Users.Where(user => user.FirstName.Contains(search) || user.LastName.Contains(search));
+        }
     }
 }
