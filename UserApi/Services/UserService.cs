@@ -21,6 +21,10 @@ namespace UserApi.Services
 
         public IEnumerable<User> SearchUsers(string search)
         {
+            if (string.IsNullOrEmpty(search))
+            {
+                return new List<User>();
+            }
             return _repository.GetAll(search);
         }
     }

@@ -21,7 +21,14 @@ namespace UserApi.Controllers
         [HttpGet]
         public ActionResult<List<User>> GetAll()
         {
-            return Ok(_userService.GetAllUsers().ToList());
+            return Ok(_userService.GetAllUsers());
+        }
+
+        [HttpGet]
+        [Route("search")]
+        public ActionResult<List<User>> Search(string search)
+        {
+            return Ok(_userService.SearchUsers(search));
         }
     }
 }

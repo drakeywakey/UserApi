@@ -80,6 +80,8 @@ namespace UserApiTests
             _repository.Setup(repo => repo.GetAll()).Returns(list);
             _repository.Setup(repo => repo.GetAll("D")).Returns(
                 list.Where(user => user.FirstName.Equals("Doug")));
+            _repository.Setup(repo => repo.GetAll("c")).Returns(
+                list.Where(user => user.Id == 1 || user.Id == 4));
 
             _service = new UserService(_repository.Object);
         }
@@ -95,6 +97,23 @@ namespace UserApiTests
         {
             var result = _service.SearchUsers("D");
             Assert.True(result.Any(user => user.FirstName.Equals("Doug")));
+        }
+
+        [Fact]
+        public void Search_NullOrEmptyString_ReturnsEmptyList()
+        {
+            var result = _service.SearchUsers("");
+            Assert.Equal(0, result.Count());
+
+            result = _service.SearchUsers(null);
+            Assert.Equal(0, result.Count());
+        }
+
+        [Fact]
+        public void Search_IsNotCaseSensitive()
+        {
+            var result = _service.SearchUsers("c");
+            Assert.Equal(2, result.Count());
         }
     }
 }

@@ -26,5 +26,12 @@ namespace UserApiTests
             var result = _controller.GetAll();
             Assert.IsType<OkObjectResult>(result.Result);
         }
+
+        [Fact]
+        public void GetAll_WithSearch_ReturnsOk()
+        {
+            var result = _controller.Search("abcd");
+            Assert.IsType<OkObjectResult>(result.Result);
+        }
     }
 }
