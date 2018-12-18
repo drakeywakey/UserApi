@@ -3,9 +3,12 @@
 class Person extends React.Component {
 
     render() {
-        const { firstName, lastName } = this.props.person
+        const { firstName, lastName, imageSrc } = this.props.person
         return (
-            <li>{firstName + ' ' + lastName}</li>
+            <li>
+                <span>{ firstName + ' ' + lastName }</span>
+                <img src={imageSrc} />
+            </li>
         )
     }
 
