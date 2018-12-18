@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{F872DBC7-B686-411A-A56D-27BBB50D5EF3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserApi/wwwroot/js/app.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UserApi/Controllers/UserController.cs">
     <Files>
       <File FileName="UserApi/wwwroot/js/app.js" Line="16" Column="6" />
+      <File FileName="UserApi/Controllers/UserController.cs" Line="27" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
