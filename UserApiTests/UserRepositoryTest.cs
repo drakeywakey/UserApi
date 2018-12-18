@@ -1,24 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 using UserApi.Infrastructure;
 using UserApi.Interfaces;
 using UserApi.Models;
-using UserApi.Services;
 using Xunit;
 
 namespace UserApiTests
 {
-    public class UserServiceTest
+    public class UserRepositoryTest
     {
-        IUserService _service;
-        Mock<IUserRepository> _repository;
+        IUserRepository _repository;
+        Mock<UserContext> _context;
 
-        public UserServiceTest()
+        public UserRepositoryTest()
         {
-            _repository = new Mock<IUserRepository>();
-
             var list = new List<User>
             {
                 new User
@@ -75,30 +72,33 @@ namespace UserApiTests
                     ImageSrc = "src",
                     Interests = "Pink"
                 }
-            };
+            }.AsQueryable();
 
-            _repository.Setup(repo => repo.GetAll()).Returns(list);
-            _service = new UserService(_repository.Object);
+            var mockSet = new Mock<DbSet<User>>();
+            mockSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(list.Provider);
+            mockSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(list.Expression);
+            mockSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(list.ElementType);
+            mockSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(list.GetEnumerator());
+
+            _context = new Mock<UserContext>();
+            _context.Setup(c => c.Users).Returns(mockSet.Object);
+
+            _repository = new UserRepository(_context.Object);
         }
 
         [Fact]
-        public void GetAll_ReturnsAllUsers()
+        public void GetAll_WithSearchString_FindsMatchingUsers()
         {
-            Assert.Equal(5, _service.GetAllUsers().Count());
+            var result = _repository.GetAll("D");
+            Assert.Contains(result, user => user.FirstName.Equals("Doug"));
         }
 
         [Fact]
-        public void Search_NullString_ReturnsEmptyList()
+        public void GetAll_WithSearchString_IsNotCaseSensitive()
         {
-            var result = _service.SearchUsers(null, 0);
-            Assert.Empty(result);
-        }
-
-        [Fact]
-        public void Search_EmptyString_ReturnsAllUsers()
-        {
-            var result = _service.SearchUsers("", 0).Count();
-            Assert.Equal(5, result);
+            var result = _repository.GetAll("c");
+            Assert.Equal(2, result.Count());
+            Assert.Contains(result, user => user.FirstName.Equals("Carl"));
         }
     }
 }

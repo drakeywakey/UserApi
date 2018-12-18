@@ -30,7 +30,7 @@ namespace UserApiTests
         [Fact]
         public void GetAll_WithSearch_ReturnsOk()
         {
-            var result = _controller.Search("abcd");
+            var result = _controller.Search("abcd", 0);
             Assert.IsType<OkObjectResult>(result.Result);
         }
     }

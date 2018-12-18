@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using UserApi.Interfaces;
 using UserApi.Models;
 
@@ -19,12 +20,23 @@ namespace UserApi.Services
             return _repository.GetAll();
         }
 
-        public IEnumerable<User> SearchUsers(string search)
+        public IEnumerable<User> SearchUsers(string search, int wait)
         {
-            if (string.IsNullOrEmpty(search))
+            if (wait > 0)
+            {
+                Thread.Sleep(wait * 1000);
+            }
+
+            if (search == null)
             {
                 return new List<User>();
             }
+
+            if (search == "")
+            {
+                return _repository.GetAll();
+            }
+
             return _repository.GetAll(search);
         }
     }

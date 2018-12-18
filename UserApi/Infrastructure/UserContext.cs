@@ -11,7 +11,7 @@ namespace UserApi.Infrastructure
         public UserContext(DbContextOptions<UserContext> options)
         : base(options){}
 
-        public DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -14,7 +14,7 @@ namespace UserApi.Infrastructure
         {
             _context = context;
 
-            if (_context.Users.Find(1L) == null)
+            if (_context.Users.Find(1L) == null && _context.Database != null)
             {
                 _context.Database.EnsureCreated();
             }
