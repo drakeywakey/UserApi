@@ -11,6 +11,7 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,5 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\js\Home.js" />
+    <Content Remove="wwwroot\js\Person.js" />
   </ItemGroup>
 </Project>

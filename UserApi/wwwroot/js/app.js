@@ -12,9 +12,9 @@
 
     render() {
         return (
-            <div>
-                <input onChange={this.handleChange.bind(this)} value={ this.state.search }/>
-                <button onClick={ () => this.props.handleClick(this.state.search) }>Search!</button>
+            <div className='search'>
+                <input className='search-text' onChange={this.handleChange.bind(this)} value={ this.state.search }/>
+                <button className='search-button' onClick={ () => this.props.handleClick(this.state.search) }>Search!</button>
             </div>
         )
     }
@@ -25,9 +25,9 @@ class Person extends React.Component {
     render() {
         const { firstName, lastName, imageSrc } = this.props.person
         return (
-            <li>
+            <li className='person'>
+                <img src={imageSrc} className='image' />
                 <span>{ firstName + ' ' + lastName }</span>
-                <img src={imageSrc} />
             </li>
         )
     }
@@ -62,9 +62,9 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='home'>
                 <Search handleClick={this.searchUsers.bind(this)} />
-                <ul>
+                <ul className='list'>
                     { this.state.persons.map(person => <Person key={ person.id } person={ person } />) }
                 </ul>
             </div>
