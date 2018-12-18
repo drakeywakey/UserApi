@@ -20,4 +20,7 @@
   <ItemGroup>
     <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\js\Home.js" />
+  </ItemGroup>
 </Project>

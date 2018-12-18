@@ -1,20 +1,4 @@
-﻿const baseUrl = 'https://localhost:5001/api/user'
-
-class Person extends React.Component {
-
-    render() {
-        const { firstName, lastName, imageSrc } = this.props.person
-        return (
-            <li>
-                <span>{ firstName + ' ' + lastName }</span>
-                <img src={imageSrc} />
-            </li>
-        )
-    }
-
-}
-
-class Search extends React.Component {
+﻿class Search extends React.Component {
 
     state = {
         search: ''
@@ -35,6 +19,22 @@ class Search extends React.Component {
         )
     }
 }
+
+class Person extends React.Component {
+
+    render() {
+        const { firstName, lastName, imageSrc } = this.props.person
+        return (
+            <li>
+                <span>{ firstName + ' ' + lastName }</span>
+                <img src={imageSrc} />
+            </li>
+        )
+    }
+
+}
+
+const baseUrl = 'https://localhost:5001/api/user'
 
 class Home extends React.Component {
 
