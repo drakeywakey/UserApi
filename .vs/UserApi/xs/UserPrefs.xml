@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{F872DBC7-B686-411A-A56D-27BBB50D5EF3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserApi/wwwroot/index.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UserApi/Services/UserService.cs">
     <Files>
-      <File FileName="UserApi/wwwroot/js/app.js" Line="25" Column="15" />
+      <File FileName="UserApi/wwwroot/js/app.js" Line="17" Column="51" />
       <File FileName="UserApi/Controllers/UserController.cs" Line="19" Column="18" />
       <File FileName="UserApiTests/UserServiceTest.cs" Line="102" Column="10" />
       <File FileName="UserApi/Services/UserService.cs" Line="25" Column="26" />
@@ -12,9 +12,10 @@
       <File FileName="UserApi/Startup.cs" Line="24" Column="43" />
       <File FileName="UserApi/Infrastructure/UserRepository.cs" Line="12" Column="9" />
       <File FileName="UserApi/Infrastructure/UserContext.cs" Line="76" Column="14" />
-      <File FileName="UserApi/wwwroot/index.html" Line="6" Column="17" />
+      <File FileName="UserApi/wwwroot/index.html" Line="14" Column="78" />
       <File FileName="UserApi/Models/User.cs" Line="1" Column="1" />
-      <File FileName="UserApi/wwwroot/css/main.css" Line="1" Column="1" />
+      <File FileName="UserApi/wwwroot/css/main.css" Line="47" Column="21" />
+      <File FileName="UserApi/Properties/launchSettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">

@@ -14,7 +14,7 @@
         return (
             <div className='search'>
                 <input className='search-text' onChange={this.handleChange.bind(this)} value={ this.state.search }/>
-                <button className='search-button' onClick={ () => this.props.handleClick(this.state.search) }>Search!</button>
+                <button className='search-button' onClick={ () => this.props.handleClick(this.state.search) }>Search</button>
             </div>
         )
     }
@@ -23,11 +23,14 @@
 class Person extends React.Component {
 
     render() {
-        const { firstName, lastName, imageSrc } = this.props.person
+        const { firstName, lastName, imageSrc, age, address, interests } = this.props.person
         return (
             <li className='person'>
                 <img src={imageSrc} className='image' />
-                <span>{ firstName + ' ' + lastName }</span>
+                <h3>{ firstName + ' ' + lastName } </h3>
+                <h4>{ age } years old </h4>
+                <h5>Address: { address } </h5>
+                <h5>Interests: { interests } </h5>
             </li>
         )
     }
