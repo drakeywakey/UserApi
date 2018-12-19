@@ -27,10 +27,12 @@ class Person extends React.Component {
         return (
             <li className='person'>
                 <img src={imageSrc} className='image' />
-                <h3>{ firstName + ' ' + lastName } </h3>
-                <h4>{ age } years old </h4>
-                <h5>Address: { address } </h5>
-                <h5>Interests: { interests } </h5>
+                <div className='person-info' >
+                    <h3>{ firstName + ' ' + lastName } </h3>
+                    <h4>{ age } years old </h4>
+                    <h5>Address: { address } </h5>
+                    <h5>Interests: { interests } </h5>
+                </div>
             </li>
         )
     }
