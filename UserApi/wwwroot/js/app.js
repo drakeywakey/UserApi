@@ -10,12 +10,17 @@
         })
     }
 
+    handleSubmit(event) {
+        event.preventDefault()
+        this.props.handleClick(this.state.search)
+    }
+
     render() {
         return (
-            <div className='search'>
+            <form className='search' onSubmit={ this.handleSubmit.bind(this) }>
                 <input className='search-text' onChange={this.handleChange.bind(this)} value={ this.state.search }/>
-                <button className='search-button' onClick={ () => this.props.handleClick(this.state.search) }>Search</button>
-            </div>
+                <button type='submit' className='search-button'>Search</button>
+            </form>
         )
     }
 }
