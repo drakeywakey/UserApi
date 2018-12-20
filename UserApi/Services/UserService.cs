@@ -27,12 +27,7 @@ namespace UserApi.Services
                 Thread.Sleep(wait * 1000);
             }
 
-            if (search == null)
-            {
-                return new List<User>();
-            }
-
-            if (search == "")
+            if (string.IsNullOrEmpty(search))
             {
                 return _repository.GetAll();
             }

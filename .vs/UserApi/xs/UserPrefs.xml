@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{F872DBC7-B686-411A-A56D-27BBB50D5EF3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserApi/Services/UserService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UserApi/wwwroot/js/app.js">
     <Files>
-      <File FileName="UserApi/wwwroot/js/app.js" Line="17" Column="51" />
+      <File FileName="UserApi/wwwroot/js/app.js" Line="1" Column="1" />
       <File FileName="UserApi/Controllers/UserController.cs" Line="19" Column="18" />
       <File FileName="UserApiTests/UserServiceTest.cs" Line="102" Column="10" />
       <File FileName="UserApi/Services/UserService.cs" Line="25" Column="26" />

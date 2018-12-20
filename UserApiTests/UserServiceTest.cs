@@ -88,10 +88,10 @@ namespace UserApiTests
         }
 
         [Fact]
-        public void Search_NullString_ReturnsEmptyList()
+        public void Search_NullString_ReturnsAllUsers()
         {
-            var result = _service.SearchUsers(null, 0);
-            Assert.Empty(result);
+            var result = _service.SearchUsers(null, 0).Count();
+            Assert.Equal(5, result);
         }
 
         [Fact]
